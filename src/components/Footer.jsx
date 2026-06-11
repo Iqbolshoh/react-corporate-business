@@ -1,116 +1,175 @@
-import { Globe, Phone, Mail } from "lucide-react";
+import { Building2, Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 mt-auto">
+    <footer className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Brand Information */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Globe className="w-8 h-8 text-blue-500" />
-              <span className="text-xl font-bold">CorpSolutions</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+          {/* Brand Presentation */}
+          <div className="lg:col-span-4">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Building2 className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-extrabold text-white tracking-tight leading-none">
+                  Corporate
+                </span>
+                <span className="text-xs font-semibold text-blue-500 tracking-widest uppercase">
+                  Business
+                </span>
+              </div>
             </div>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Empowering businesses with innovative solutions since 2013. We
-              build the future.
+            <p className="text-slate-400 leading-relaxed mb-6 pe-4">
+              Setting the global standard for enterprise consulting, strategic
+              growth, and corporate financial advisory since 1998.
             </p>
           </div>
 
-          {/* Services Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Services</h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
+          {/* Navigation Columns */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">
+              Expertise
+            </h3>
+            <ul className="space-y-4">
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Web Development
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  Strategy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Cloud Solutions
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  M&A Advisory
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Business Automation
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  Restructuring
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Digital Transformation
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  Operations
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Company Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
-            <ul className="space-y-3 text-gray-400 text-sm">
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">
+              Firm
+            </h3>
+            <ul className="space-y-4">
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  About Us
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  Leadership
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
                   Careers
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-400 transition-colors">
-                  Blog
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  Newsroom
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white hover:translate-x-1 inline-block transition-transform text-sm"
+                >
+                  Contact
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details - Emphasizing direct phone communication */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">
-              Contact Us
+          {/* Direct Communication Channels */}
+          <div className="lg:col-span-4">
+            <h3 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">
+              Global Headquarters
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-5">
+              <div className="flex items-start gap-4">
+                <MapPin className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  100 Corporate Business Avenue,
+                  <br />
+                  Financial District, NY 10005
+                </p>
+              </div>
+
               <a
-                href="tel:+998901234567"
-                className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
+                href="tel:+12125550199"
+                className="flex items-center gap-4 group"
               >
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600/20 transition-colors">
-                  <Phone className="w-5 h-5 text-blue-500" />
-                </div>
+                <Phone className="w-5 h-5 text-blue-500 group-hover:text-blue-400 transition-colors" />
                 <div>
-                  <p className="text-xs text-gray-500">Call us directly</p>
-                  <p className="font-medium text-sm">+998 90 123 45 67</p>
+                  <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                    Direct Line
+                  </p>
+                  <p className="text-white group-hover:text-blue-400 transition-colors">
+                    +1 (212) 555-0199
+                  </p>
                 </div>
               </a>
+
               <a
-                href="mailto:info@corpsolutions.com"
-                className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors group"
+                href="mailto:executive@corporatebusiness.com"
+                className="flex items-center gap-4 group"
               >
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600/20 transition-colors">
-                  <Mail className="w-5 h-5 text-blue-500" />
-                </div>
+                <Mail className="w-5 h-5 text-blue-500 group-hover:text-blue-400 transition-colors" />
                 <div>
-                  <p className="text-xs text-gray-500">Email support</p>
-                  <p className="font-medium text-sm">info@corpsolutions.com</p>
+                  <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                    Inquiries
+                  </p>
+                  <p className="text-white group-hover:text-blue-400 transition-colors">
+                    contact@corporate.com
+                  </p>
                 </div>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Footer Bottom Strip */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <p>
-            © {new Date().getFullYear()} CorpSolutions. All rights reserved.
+        {/* Legal Strip */}
+        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} Corporate Business LLC. All rights
+            reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
+          <div className="flex gap-6 text-sm text-slate-500">
             <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
             <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
+              Terms of Use
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              Legal Disclosures
             </a>
           </div>
         </div>

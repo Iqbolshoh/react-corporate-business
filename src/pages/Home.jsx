@@ -1,191 +1,151 @@
 import {
-  Lightbulb,
-  TrendingUp,
-  Handshake,
+  LineChart,
+  Target,
+  Briefcase,
   ArrowRight,
-  Shield,
-  Zap,
-  Users,
+  ShieldCheck,
+  Award,
+  ArrowUpRight,
 } from "lucide-react";
 
 export default function Home() {
-  // Array containing core services data
+  // Service offerings data array
   const services = [
     {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: "Digital Innovation",
+      icon: <LineChart className="w-8 h-8" />,
+      title: "Strategic Planning",
       description:
-        "Transform your business with cutting-edge technology solutions and strategic digital planning.",
+        "Comprehensive business strategies designed to drive sustainable growth and market dominance.",
       image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Business Growth",
+      icon: <Target className="w-8 h-8" />,
+      title: "Market Expansion",
       description:
-        "Accelerate your growth with data-driven strategies and scalable solutions.",
+        "Data-driven methodologies to identify and capture new market opportunities effectively.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
     },
     {
-      icon: <Handshake className="w-8 h-8" />,
-      title: "Strategic Consulting",
+      icon: <Briefcase className="w-8 h-8" />,
+      title: "Corporate Finance",
       description:
-        "Expert guidance to optimize operations and maximize business potential.",
+        "Expert financial restructuring and investment advisory for optimal resource allocation.",
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80",
     },
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full pt-24 pb-12 bg-slate-50">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background Pattern Layer */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Hero Text Content */}
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                <Zap className="w-4 h-4 mr-2" />
-                Transforming Businesses Since 2013
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Corporate Business
-                <span className="text-blue-600 block">
-                  Solutions for Growth
-                </span>
-              </h1>
-
-              <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                We help companies grow through innovative digital solutions,
-                strategic consulting, and modern technology. Transform your
-                business with our expert team.
-              </p>
-
-              {/* Call to Action Buttons */}
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center w-full sm:w-auto">
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
-                <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200 flex items-center justify-center w-full sm:w-auto">
-                  <Users className="w-5 h-5 mr-2" />
-                  Schedule Consultation
-                </button>
-              </div>
-
-              {/* Social Proof / Trust Indicators */}
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6 mt-10 pt-8 border-t border-gray-200">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <img
-                      key={i}
-                      src={`https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=50&h=50&q=80&crop=face`}
-                      alt="Team member"
-                      className="w-10 h-10 rounded-full border-2 border-white shadow-sm"
-                    />
-                  ))}
-                </div>
-                <div className="text-sm text-gray-600 text-center sm:text-left">
-                  <strong className="text-blue-600">500+</strong> happy clients
-                  <br className="hidden sm:block lg:hidden" /> worldwide
-                </div>
-              </div>
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Hero Typography and Actions */}
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/50 border border-blue-200 text-blue-700 text-sm font-bold tracking-wide uppercase mb-8">
+              <Award className="w-4 h-4" />
+              Industry Leading Consultancy
             </div>
 
-            {/* Hero Image Presentation */}
-            <div className="relative mt-12 lg:mt-0 px-4 sm:px-0">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl blur-lg opacity-20 hidden sm:block"></div>
-              <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80"
-                alt="Business professionals meeting"
-                className="rounded-2xl shadow-2xl relative w-full object-cover"
-              />
-              <div className="absolute -bottom-6 -right-6 sm:bottom-[-20px] sm:right-[-20px] bg-white rounded-xl shadow-xl p-4 sm:p-6 scale-90 sm:scale-100">
-                <div className="flex items-center space-x-3">
-                  <Shield className="w-8 h-8 text-green-500" />
-                  <div>
-                    <div className="text-xs sm:text-sm text-gray-500">
-                      Success Rate
-                    </div>
-                    <div className="text-xl sm:text-2xl font-bold text-gray-900">
-                      98%
-                    </div>
-                  </div>
-                </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8">
+              Empower Your <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                Corporate Future
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl">
+              Partner with Corporate Business to unlock unprecedented growth. We
+              deliver premium strategic solutions tailored for visionary
+              enterprises.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all duration-300 shadow-xl shadow-blue-600/20 hover:-translate-y-1">
+                Explore Services
+                <ArrowRight className="w-5 h-5" />
+              </button>
+              <button className="flex items-center justify-center gap-2 bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 shadow-sm">
+                Book Consultation
+              </button>
+            </div>
+          </div>
+
+          {/* Hero Imagery */}
+          <div className="order-1 lg:order-2 relative">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent rounded-3xl transform rotate-3 scale-105 blur-2xl"></div>
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+              alt="Corporate Office"
+              className="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full"
+            />
+
+            {/* Floating Trust Badge */}
+            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 hidden md:flex items-center gap-4 animate-bounce-slow">
+              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+                <ShieldCheck className="w-8 h-8 text-green-600" />
+              </div>
+              <div>
+                <p className="text-sm text-slate-500 font-semibold uppercase tracking-wider">
+                  Client Trust
+                </p>
+                <p className="text-2xl font-black text-slate-900">99.9%</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Services Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Core Services
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive solutions tailored to your business needs
-          </p>
+      {/* Services Grid Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+              Premium Solutions
+            </h2>
+            <p className="text-xl text-slate-600">
+              Comprehensive frameworks designed for enterprise-scale success.
+            </p>
+          </div>
+          <button className="text-blue-600 font-bold hover:text-blue-800 flex items-center gap-2 group">
+            View all services
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group cursor-pointer flex flex-col"
+              className="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-100 transition-all duration-500 hover:-translate-y-2 flex flex-col"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-56 overflow-hidden relative">
+                <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
-              </div>
-              <div className="p-6 flex-grow flex flex-col">
-                <div className="text-blue-600 mb-4 bg-blue-50 w-14 h-14 rounded-lg flex items-center justify-center">
+                <div className="absolute top-6 left-6 z-20 w-14 h-14 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center text-blue-600 shadow-lg">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              </div>
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-4 flex-grow">
+                <p className="text-slate-600 leading-relaxed mb-8 flex-grow">
                   {service.description}
                 </p>
-                <button className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center mt-auto w-max">
-                  Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                </button>
+                <div className="flex items-center text-slate-900 font-bold group-hover:text-blue-600 transition-colors mt-auto">
+                  Learn More
+                  <ArrowUpRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </div>
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Bottom Call to Action Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Join hundreds of companies that have already accelerated their
-            growth with our solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200 shadow-lg w-full sm:w-auto">
-              Start Free Trial
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 w-full sm:w-auto">
-              View Pricing
-            </button>
-          </div>
         </div>
       </section>
     </div>

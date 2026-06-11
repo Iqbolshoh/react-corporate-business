@@ -1,61 +1,89 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Globe, Menu, X } from "lucide-react";
+import { Building2, Menu, X, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
-  // State to handle mobile menu visibility
+  // State to toggle mobile navigation menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Get current path to highlight the active navigation link
+  // State to handle navbar background on scroll
+  const [scrolled, setScrolled] = useState(false);
+
+  // Hook to get current route path
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
 
-  return (
-    <nav className="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          {/* Brand Logo Section */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <Globe className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold text-blue-600">
-              CorpSolutions
-            </span>
-          </div>
+  // Add scroll event listener to change navbar appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-          {/* Desktop Navigation Menu */}
-          <div className="hidden md:flex space-x-8 items-center">
-            <Link
-              to="/"
-              className={`${
-                isActive("/")
-                  ? "text-blue-600 border-b-2 border-blue-600 font-semibold"
-                  : "text-gray-600 hover:text-blue-600 font-medium hover:bg-blue-50"
-              } px-3 py-2 rounded-md text-sm transition-all duration-200`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={`${
-                isActive("/about")
-                  ? "text-blue-600 border-b-2 border-blue-600 font-semibold"
-                  : "text-gray-600 hover:text-blue-600 font-medium hover:bg-blue-50"
-              } px-3 py-2 rounded-md text-sm transition-all duration-200`}
-            >
-              About
-            </Link>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg">
-              Contact Us
+  return (
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-xl shadow-md py-2"
+          : "bg-white py-4"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-12">
+          {/* Brand Identity Section */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors duration-300 shadow-lg">
+              <Building2 className="w-6 h-6 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-extrabold text-slate-900 tracking-tight leading-none">
+                Corporate
+              </span>
+              <span className="text-sm font-semibold text-blue-600 tracking-widest uppercase">
+                Business
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex gap-6">
+              <Link
+                to="/"
+                className={`text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+                  isActive("/")
+                    ? "text-blue-600"
+                    : "text-slate-500 hover:text-slate-900"
+                }`}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`text-sm font-bold uppercase tracking-wider transition-colors duration-200 ${
+                  isActive("/about")
+                    ? "text-blue-600"
+                    : "text-slate-500 hover:text-slate-900"
+                }`}
+              >
+                About Us
+              </Link>
+            </div>
+
+            {/* Primary Call to Action Button */}
+            <button className="flex items-center gap-2 bg-slate-900 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-blue-600/30">
+              Get in Touch
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-600 hover:text-blue-600 focus:outline-none"
+              className="p-2 text-slate-600 hover:text-blue-600 hover:bg-slate-100 rounded-lg transition-colors"
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -67,38 +95,43 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
-          <div className="px-4 pt-2 pb-4 space-y-2">
-            <Link
-              to="/"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive("/")
-                  ? "text-blue-600 bg-blue-50"
-                  : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive("/about")
-                  ? "text-blue-600 bg-blue-50"
-                  : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
-              }`}
-            >
-              About
-            </Link>
-            <button className="w-full text-center bg-blue-600 text-white px-6 py-3 mt-4 rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-md">
-              Contact Us
+      {/* Mobile Navigation Panel */}
+      <div
+        className={`md:hidden absolute w-full bg-white border-t border-slate-100 shadow-2xl transition-all duration-300 overflow-hidden ${
+          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-4 py-6 space-y-4">
+          <Link
+            to="/"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`block px-4 py-3 rounded-xl text-base font-bold uppercase tracking-wider ${
+              isActive("/")
+                ? "bg-blue-50 text-blue-600"
+                : "text-slate-600 hover:bg-slate-50"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`block px-4 py-3 rounded-xl text-base font-bold uppercase tracking-wider ${
+              isActive("/about")
+                ? "bg-blue-50 text-blue-600"
+                : "text-slate-600 hover:bg-slate-50"
+            }`}
+          >
+            About Us
+          </Link>
+          <div className="pt-4">
+            <button className="w-full flex justify-center items-center gap-2 bg-slate-900 text-white px-6 py-4 rounded-xl font-bold hover:bg-blue-600 transition-colors shadow-lg">
+              Get in Touch
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
